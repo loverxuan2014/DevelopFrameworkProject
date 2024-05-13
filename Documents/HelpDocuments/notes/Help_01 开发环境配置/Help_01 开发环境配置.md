@@ -118,6 +118,7 @@ https://mirrors.huaweicloud.com/repository/npm/
 `npm install -g cnpm --registry=https://registry.npmmirror.com`
 查看版本验证安装是否成功
 `cnpm -v`
+若无法执行为cnpm所在路径未被添加，可修改环境变量或把cnpm移动至npm相同位置
 
 ### 3.2 服务端底层框架：Pinus
 - **Url**: [*官网*](http://pinus.io/)
@@ -136,12 +137,12 @@ $ pinus init ""
 创建项目过程中需要输入连接类型，输入1(WebSocket)，目前引擎未支持支持其他socket类型
 cmd进入 HellWorldSrv\game-server目录
 安装依赖包
-`$ sh npm-install.sh`
+`cnpm install`
 编译项目
-`$ npm run build`
+`npm run build`
 启动项目服务
-`$ cd dist`
-`$ pinus start`
+`cd dist`
+`pinus start`
 ![alt text](image-9.png)
 访问 [http://localhost:3001](http://localhost:3001)，点击Test Game Server，提示 game server is ok 说明运行成功
 其他服务器操作可查看官方文档

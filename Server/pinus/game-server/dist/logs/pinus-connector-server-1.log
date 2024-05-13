@@ -1,0 +1,15 @@
+[2024-05-13T13:19:56.001] [INFO] pinus - [connector-server-1 application.js] application inited: "connector-server-1"
+[2024-05-13T13:19:56.004] [DEBUG] pinus - [connector-server-1 protobuf.js] ProtobufComponent options: {}
+[2024-05-13T13:19:56.009] [INFO] pinus - [connector-server-1 application.js] "connector-server-1" enter before start...
+[2024-05-13T13:19:56.010] [INFO] pinus - [connector-server-1 application.js] "connector-server-1" enter start...
+[2024-05-13T13:19:56.033] [WARN] logger - [connector-server-1 console] after start all server, use route dictionary :
+ connector.entryHandler.entry
+connector.entryHandler.publish
+connector.entryHandler.subscribe
+[2024-05-13T13:19:56.074] [INFO] pinus - [connector-server-1 application.js] "connector-server-1" enter after start...
+[2024-05-13T13:19:56.076] [INFO] pinus - [connector-server-1 application.js] "connector-server-1" finish start
+[2024-05-13T13:19:56.076] [INFO] pinus - [connector-server-1 application.js] "connector-server-1" startup in 74 ms
+[2024-05-13T13:26:08.546] [DEBUG] pinus - [connector-server-1 connector.js] [connector-server-1] getSession session is created with session id: 1
+[2024-05-13T13:26:08.555] [DEBUG] pinus - [connector-server-1 connector.js] [connector-server-1] send message reqId: 1, route: connector.entryHandler.entry, msg: {"code":200,"msg":"game server is ok."}, receivers: [1], opts: {"type":"response"}
+[2024-05-13T16:24:49.361] [DEBUG] pinus - [connector-server-1 switcher.js] connection error:read ECONNRESET, the remote ip is ::ffff:127.0.0.1 && port is 7499
+[2024-05-13T16:24:49.363] [DEBUG] pinus - [connector-server-1 sessionService.js] session on [connector-server-1] is closed with session id: 1,uid:null,reason:1001
