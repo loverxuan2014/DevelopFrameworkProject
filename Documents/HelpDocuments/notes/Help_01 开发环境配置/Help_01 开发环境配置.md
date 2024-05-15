@@ -135,6 +135,7 @@ $ pinus init ./HelloWorld //HelloWorld为项目名
 $ pinus init ""
 ```
 创建项目过程中需要输入连接类型，输入1(WebSocket)，目前引擎未支持支持其他socket类型
+<font color=red>若从git上下载的工程文件，直接从这下面步骤开始</font>
 cmd进入 HellWorldSrv\game-server目录
 安装依赖包
 `cnpm install`
