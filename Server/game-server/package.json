@@ -9,7 +9,8 @@
     "main": "./dist/app",
     "scripts": {
         "start": "npm run build && cd dist &&  node app",
-        "build": "tsc  && node copy"
+        "build": "tsc  && node copy",
+        "watch": "tsc --watch"
     },
     "dependencies":{
         "@types/node": "^16.3.3",

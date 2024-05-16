@@ -1,0 +1,465 @@
+<!DOCTYPE html><html><head>
+      <title>Help_02 TypeScript基础语法</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+      
+      
+      
+      
+      
+      <style>
+      code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+      <!-- The content below will be included at the end of the <head> element. --><script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    // your code here
+  });
+</script></head><body for="html-export">
+    
+    
+      <div class="crossnote markdown-preview  ">
+      
+<h1 id="help_02-typescript基础语法">Help_02 TypeScript基础语法 </h1>
+<hr>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Date</th>
+<th style="text-align:center">Author</th>
+<th style="text-align:left">Content</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">2024/5/16</td>
+<td style="text-align:center">圆圈</td>
+<td style="text-align:left">创建文档</td>
+</tr>
+</tbody>
+</table>
+<h2 id="1-tsc常用编译参数">1. tsc常用编译参数 </h2>
+<p>--help 显示帮助信息<br>
+<code>tsc --help</code><br>
+--module 载入扩展模块<br>
+<code>tsc --module</code><br>
+--target 设置ECMA版本<br>
+<code>tsc --target</code><br>
+--declaration 额外生成一个.d.ts扩展名的文件<br>
+<code>tsc ts-hw.ts --declaration #生成ts-hw.ts和ts-hw.d.ts两个文件 </code><br>
+--removeComments 删除文件的注释<br>
+<code>tsc --removeComments</code><br>
+--out 编译多个文件合并到一个输出的文件<br>
+<code>tsc --out</code><br>
+--sourcemap 生成一个sourcemap(.map)文件，是一个存储源代码与编译代码对应位置映射的信息文件<br>
+<code>tsc --sourcemap</code><br>
+--module nolmplicitAny 在表达式和声明上有隐含的any类型时会报错<br>
+<code>tsc --module nolmplicitAny</code><br>
+--watch 在监视模式下运行编译器。会监视输出文件，在它们改变时重新编译。<br>
+<code>tsc --watch</code></p>
+<h2 id="2-typescript保留关键字">2. TypeScript保留关键字 </h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">关键字</th>
+<th style="text-align:center">用途</th>
+<th style="text-align:center">关键字</th>
+<th style="text-align:center">用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">break</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">as</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">catch</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">switch</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">case</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">if</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">throw</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">else</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">var</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">number</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">string</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">get</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">module</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">type</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">instanceof</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">typeof</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">public</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">private</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">enum</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">export</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">finally</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">for</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">while</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">void</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">null</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">super</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">this</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">new</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">in</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">return</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">true</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">false</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">any</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">extends</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">static</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">let</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">package</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">implements</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">interface</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">function</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">do</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">try</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">yield</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">const</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">continue</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+<h2 id="3-语言特性">3. 语言特性 </h2>
+<ul>
+<li>【空白和换行】TypeScript 会忽略程序中出现的空格、制表符和换行符。</li>
+<li>【大小写】TypeScript 区分大写和小写字符。</li>
+<li>【整型】TypeScript 和 JavaScript 没有整数类型。</li>
+<li>【分号】每行指令都是一段语句，分号在 TypeScript 中是可选的，建议使用。
+<ol>
+<li>以下代码都是合法的：</li>
+</ol>
+<pre data-role="codeBlock" data-info="typescript" class="language-typescript typescript"><code><span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"Runoob"</span><span class="token punctuation">)</span>
+<span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"Google"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><ol start="2">
+<li>如果语句写在同一行则一定需要使用分号来分隔，否则会报错，如：</li>
+</ol>
+<pre data-role="codeBlock" data-info="typescript" class="language-typescript typescript"><code><span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"Runoob"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"Google"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></li>
+<li>【注释】单行注释 ( // ) − 在 // 后面的文字都是注释内容。多行注释 (/* */) − 这种注释可以跨越多行。<pre data-role="codeBlock" data-info="typescript" class="language-typescript typescript"><code><span class="token comment">// 这是一个单行注释</span>
+<span class="token comment">/* 
+这是一个多行注释 
+这是一个多行注释 
+这是一个多行注释 
+*/</span>
+</code></pre></li>
+<li>【面向对象】TS是一种面向对象的编程语言。
+<ul>
+<li>对象：对象是类的一个实例，有状态和行为。</li>
+<li>类：类是一个模板，它描述一类对象的行为和状态。</li>
+<li>方法/函数：方法是类的操作的实现步骤。</li>
+</ul>
+</li>
+</ul>
+<h2 id="3-数据类型">3. 数据类型 </h2>
+<table>
+<tbody><tr>
+<th>数据类型</th>
+<th>关键字</th>
+<th>示例</th>
+</tr>
+<tr>
+<td>任意类型</td>
+<td>any</td>
+<td>
+声明为 any 的变量可以赋予任意类型的值。
+</td>
+</tr>
+<tr>
+<td>数字类型</td>
+<td>number</td>
+<td>
+双精度 64 位浮点值。它可以用来表示整数和分数。
+<pre class="language-text">let binaryLiteral: number = 0b1010; // 二进制
+let octalLiteral: number = 0o744;    // 八进制
+let decLiteral: number = 6;    // 十进制
+let hexLiteral: number = 0xf00d;    // 十六进制
+
+</pre>
+</td>
+</tr>
+<tr>
+<td>字符串类型</td>
+<td>string</td>
+<td>
+一个字符系列，使用单引号（'）或双引号（"）来表示字符串类型。反引号（`）来定义多行文本和内嵌表达式。
+<pre class="language-text">let name: string = "Runoob";
+let years: number = 5;
+let words: string = `您好，今年是 ${ name } 发布 ${ years + 1} 周年`;
+
+</pre>
+</td>
+</tr>
+<tr>
+<td>布尔类型</td>
+<td>boolean</td>
+<td>
+表示逻辑值：true 和 false。
+<pre class="language-text">let flag: boolean = true;
+
+</pre>
+</td>
+</tr>
+<tr>
+<td>数组</td>
+<td>无</td>
+<td>	
+声明变量为数组。
+<pre class="language-text">// 在元素类型后面加上[]
+let arr: number[] = [1, 2];
+// 或者使用数组泛型
+let arr: Array = [1, 2];
+
+</pre>
+</td>
+</tr>
+<tr>
+<td>元组</td>
+<td>无</td>
+<td>	
+元组类型用来表示已知元素数量和类型的数组，各元素的类型不必相同，对应位置的类型需要相同。
+<pre class="language-text">let x: [string, number];
+x = ['Runoob', 1];    // 运行正常
+x = [1, 'Runoob'];    // 报错
+console.log(x[0]);    // 输出 Runoob
+
+</pre>
+</td>
+</tr>
+<tr>
+<td>枚举</td>
+<td>enum</td>
+<td>	
+枚举类型用于定义数值集合。
+<pre class="language-text">enum Color {Red, Green, Blue};
+let c: Color = Color.Blue;
+console.log(c);    // 输出 2
+
+</pre>
+</td>
+</tr>
+<tr>
+<td>void</td>
+<td>void</td>
+<td>	
+用于标识方法返回值的类型，表示该方法没有返回值。
+<pre class="language-text">function hello(): void {
+    alert("Hello Runoob");
+}
+
+</pre>
+</td>
+</tr>
+<tr>
+<td>null</td>
+<td>null</td>
+<td>	
+表示对象值缺失。
+</td>
+</tr>
+<tr>
+<td>undefined</td>
+<td>undefined</td>
+<td>	
+用于初始化变量为一个未定义的值。
+</td>
+</tr>
+<tr>
+<td>never</td>
+<td>never</td>
+<td>	
+never 是其它类型（包括 null 和 undefined）的子类型，代表从不会出现的值。
+</td>
+</tr>
+</tbody></table>
+<h2 id="4-变量声明">4. 变量声明 </h2>
+<p>TypeScript 变量的命名规则：</p>
+<ul>
+<li>变量名称可以包含数字和字母。</li>
+<li>除了下划线 _ 和美元 $ 符号外，不能包含其他特殊字符，包括空格。</li>
+<li>变量名不能以数字开头。</li>
+</ul>
+<p>变量声明方式：</p>
+<ul>
+<li>var let const</li>
+</ul>
+<pre data-role="codeBlock" data-info="typescript" class="language-typescript typescript"><code><span class="token comment">//常规声明</span>
+<span class="token keyword keyword-var">var</span> <span class="token punctuation">[</span>变量名<span class="token punctuation">]</span> <span class="token operator">:</span> <span class="token punctuation">[</span>类型<span class="token punctuation">]</span> <span class="token operator">=</span> 值<span class="token punctuation">;</span>
+<span class="token keyword keyword-var">var</span> username<span class="token operator">:</span> <span class="token builtin">string</span> <span class="token operator">=</span> <span class="token string">"Runoob"</span><span class="token punctuation">;</span>
+<span class="token comment">//无初始值声明：变量值会设置为 undefined</span>
+<span class="token keyword keyword-var">var</span> username<span class="token operator">:</span><span class="token builtin">string</span><span class="token punctuation">;</span>
+<span class="token comment">//无类型声明：类型为any</span>
+<span class="token keyword keyword-var">var</span> username <span class="token operator">=</span> <span class="token string">"Runoob"</span><span class="token punctuation">;</span>
+<span class="token comment">//无初始值及类型声明：类型为any，初始值为undefined</span>
+<span class="token keyword keyword-var">var</span> username<span class="token punctuation">;</span>
+</code></pre><ul>
+<li>
+<p>var<br>
+已不推荐使用。<br>
+var声明可以在包含它的函数，模块，命名空间或全局作用域内部任何位置被访问，多次声明同一个变量并不会报错。</p>
+<pre data-role="codeBlock" data-info="typescript" class="language-typescript typescript"><code><span class="token keyword keyword-for">for</span> <span class="token punctuation">(</span><span class="token keyword keyword-var">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token function">setTimeout</span><span class="token punctuation">(</span>
+    <span class="token keyword keyword-function">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span> 
+    <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">100</span> <span class="token operator">*</span> i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p>预期返回结果1-9，实际返回结果都是10。<br>
+因为实际上我们传给setTimeout的每一个函数表达式实际上都引用了相同作用域里的同一个i。<br>
+使用let无此问题。</p>
+</li>
+<li>
+<p>let<br>
+当用let声明一个变量，它使用的是词法作用域或块作用域。块级作用域有两个特点：</p>
+<ol>
+<li>块作用域变量在包含它们的块或for循环之外是不能访问的</li>
+<li>它们不能在被声明之前读或写。虽然这些变量始终“存在”于它们的作用域里，但在直到声明它的代码之前的区域都属于暂时性死区。</li>
+</ol>
+</li>
+<li>
+<p>const<br>
+const拥有与 let相同的作用域规则，但是为静态声明，声明后的值不可改变。</p>
+</li>
+</ul>
+<h3 id="41-类型断言">4.1 类型断言 </h3>
+<p>类型断言可以用来手动指定一个值的类型，即允许变量从一种类型更改为另一种类型。<br>
+语法格式：<code>&lt;类型&gt;值</code>或<code>值 as 类型</code><br>
+实例：</p>
+<pre data-role="codeBlock" data-info="typescript" class="language-typescript typescript"><code><span class="token keyword keyword-var">var</span> str <span class="token operator">=</span> <span class="token string">'1'</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-var">var</span> str2<span class="token operator">:</span> <span class="token builtin">number</span> <span class="token operator">=</span> <span class="token operator">&lt;</span><span class="token builtin">number</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token builtin">any</span><span class="token operator">&gt;</span> str<span class="token punctuation">;</span> 
+<span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>str2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><p>当 A 类型是 B 类型的子集，或者 B 类型是 A 类型的子集时，A 能被成功断言成 B。这是为了在进行类型断言时提供额外的安全性，完全毫无根据的断言是危险的，如果你想这么做，你可以使用 any，如<code>var str2: number = &lt;any&gt; str;</code></p>
+<h3 id="42-类型推断">4.2 类型推断 </h3>
+<p>当类型没有给出时，TypeScript 编译器利用类型推断来推断类型。<br>
+如果由于缺乏声明而不能推断出类型，那么它的类型被视作默认的动态 any 类型。</p>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>var num = 2;    // 类型推断为 number
+console.log("num 变量的值为 "+num); 
+num = "12";    // 编译错误
+console.log(num);
+</code></pre><p>第一行代码声明了变量 num 初始值为 2，程序使用类型推断来确定变量的数据类型，第一次赋值为 2，num 设置为 number 类型。第三行代码，当我们再次为变量设置字符串类型的值时，这时编译会错误。因为变量已经设置为了 number 类型。</p>
+<h3 id="43-变量作用域">4.3 变量作用域 </h3>
+<ul>
+<li><strong>全局作用域</strong> − 全局变量定义在程序结构的外部，它可以在你代码的任何位置使用。</li>
+<li><strong>类作用域</strong> − 这个变量也可以称为字段。类变量声明在一个类里头，但在类的方法外面。 该变量可以通过类的对象来访问。类变量也可以是静态的，<strong>静态的变量可以通过类名直接访问。</strong></li>
+<li><strong>局部作用域</strong> − 局部变量，局部变量只能在声明它的一个代码块（如：方法）中使用。</li>
+</ul>
+<pre data-role="codeBlock" data-info="typescript" class="language-typescript typescript"><code><span class="token keyword keyword-var">var</span> global_num <span class="token operator">=</span> <span class="token number">12</span>          <span class="token comment">// 全局变量</span>
+<span class="token keyword keyword-class">class</span> <span class="token class-name">Numbers</span> <span class="token punctuation">{</span> 
+   num_val <span class="token operator">=</span> <span class="token number">13</span><span class="token punctuation">;</span>             <span class="token comment">// 实例变量</span>
+   <span class="token keyword keyword-static">static</span> sval <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>         <span class="token comment">// 静态变量</span>
+   
+   <span class="token function">storeNum</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span><span class="token keyword keyword-void">void</span> <span class="token punctuation">{</span> 
+      <span class="token keyword keyword-var">var</span> local_num <span class="token operator">=</span> <span class="token number">14</span><span class="token punctuation">;</span>    <span class="token comment">// 局部变量</span>
+   <span class="token punctuation">}</span> 
+<span class="token punctuation">}</span> 
+<span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"全局变量为: "</span><span class="token operator">+</span>global_num<span class="token punctuation">)</span>  
+<span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>Numbers<span class="token punctuation">.</span>sval<span class="token punctuation">)</span>   <span class="token comment">// 静态变量</span>
+<span class="token keyword keyword-var">var</span> obj <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">Numbers</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+<span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"实例变量: "</span><span class="token operator">+</span>obj<span class="token punctuation">.</span>num_val<span class="token punctuation">)</span>
+</code></pre><p>执行结果：</p>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>全局变量为: 12
+10
+实例变量: 13
+</code></pre>
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
