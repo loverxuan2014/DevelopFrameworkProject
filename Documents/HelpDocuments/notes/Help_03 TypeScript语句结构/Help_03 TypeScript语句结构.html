@@ -42,8 +42,541 @@
 </tr>
 </tbody>
 </table>
-<h2 id="1-tsc常用编译参数">1. tsc常用编译参数 </h2>
-
+<h2 id="1-运算符">1. 运算符 </h2>
+<h3 id="11-算数运算符">1.1 算数运算符 </h3>
+<p>假定 y=5，下面的表格解释了这些算术运算符的操作：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">运算符</th>
+<th style="text-align:center">描述</th>
+<th style="text-align:center">例子</th>
+<th style="text-align:center">X运算结果</th>
+<th style="text-align:center">Y运算结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">+</td>
+<td style="text-align:center">加法</td>
+<td style="text-align:center">x = y + 2</td>
+<td style="text-align:center">7</td>
+<td style="text-align:center">5</td>
+</tr>
+<tr>
+<td style="text-align:center">-</td>
+<td style="text-align:center">减法</td>
+<td style="text-align:center">x = y - 2</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">5</td>
+</tr>
+<tr>
+<td style="text-align:center">*</td>
+<td style="text-align:center">乘法</td>
+<td style="text-align:center">x = y * 2</td>
+<td style="text-align:center">10</td>
+<td style="text-align:center">5</td>
+</tr>
+<tr>
+<td style="text-align:center">/</td>
+<td style="text-align:center">除法</td>
+<td style="text-align:center">x = y / 2</td>
+<td style="text-align:center">2.5</td>
+<td style="text-align:center">5</td>
+</tr>
+<tr>
+<td style="text-align:center">%</td>
+<td style="text-align:center">取余</td>
+<td style="text-align:center">x = y % 2</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">5</td>
+</tr>
+<tr>
+<td style="text-align:center">++</td>
+<td style="text-align:center">自增</td>
+<td style="text-align:center">x = ++y</td>
+<td style="text-align:center">6</td>
+<td style="text-align:center">6</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">x = y++</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center">6</td>
+</tr>
+<tr>
+<td style="text-align:center">--</td>
+<td style="text-align:center">自减</td>
+<td style="text-align:center">x = --y</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">4</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">x = y--</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center">4</td>
+</tr>
+</tbody>
+</table>
+<h3 id="12-关系运算符">1.2 关系运算符 </h3>
+<p>关系运算符用于计算结果是否为 true 或者 false。<br>
+x=5，下面的表格解释了关系运算符的操作：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">运算符</th>
+<th style="text-align:center">描述</th>
+<th style="text-align:center">比较</th>
+<th style="text-align:center">返回值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">==</td>
+<td style="text-align:center">等于（不判断类型）</td>
+<td style="text-align:center">x == 8</td>
+<td style="text-align:center">false</td>
+</tr>
+<tr>
+<td style="text-align:center">===</td>
+<td style="text-align:center">等于（判断类型）</td>
+<td style="text-align:center">x == 8</td>
+<td style="text-align:center">false</td>
+</tr>
+<tr>
+<td style="text-align:center">!=</td>
+<td style="text-align:center">不等于</td>
+<td style="text-align:center">x != 8</td>
+<td style="text-align:center">true</td>
+</tr>
+<tr>
+<td style="text-align:center">&gt;</td>
+<td style="text-align:center">大于</td>
+<td style="text-align:center">x &gt; 8</td>
+<td style="text-align:center">false</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt;</td>
+<td style="text-align:center">小于</td>
+<td style="text-align:center">x &lt; 8</td>
+<td style="text-align:center">true</td>
+</tr>
+<tr>
+<td style="text-align:center">&gt;=</td>
+<td style="text-align:center">大于或等于</td>
+<td style="text-align:center">x &gt;= 8</td>
+<td style="text-align:center">false</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt;=</td>
+<td style="text-align:center">小于或等于</td>
+<td style="text-align:center">x &lt;= 8</td>
+<td style="text-align:center">true</td>
+</tr>
+</tbody>
+</table>
+<h3 id="13-逻辑运算符">1.3 逻辑运算符 </h3>
+<p>逻辑运算符用于测定变量或值之间的逻辑。<br>
+给定 x=6 以及 y=0，下表解释了逻辑运算符：</p>
+<table>
+<tbody><tr>
+<th>运算符</th>
+<th>描述</th>
+<th>例子</th>
+</tr>
+<tr>
+<td>&amp;&amp;</td>
+<td>与（所有条件成立）</td>
+<td>(x &lt; 10 &amp;&amp; y &gt; 1) 为 false</td>
+</tr>
+<tr>
+<td>||</td>
+<td>或（任一条件成立）</td>
+<td>(x &lt; 10 || y &gt; 1) 为 true</td>
+</tr>
+<tr>
+<td>!</td>
+<td>非</td>
+<td>!(x==y) 为 true</td>
+</tr>
+</tbody></table>
+<h3 id="14-位运算符">1.4 位运算符 </h3>
+<p>位操作是程序设计中对位模式按位或二进制数的一元和二元操作。主要用于二进制计算。</p>
+<table>
+<tbody><tr>
+<th>运算符</th>
+<th>描述</th>
+<th>例子</th>
+<th>二进制</th>
+<th>结果</th>
+<th>十进制</th>
+</tr>
+<tr>
+<td>&amp;</td>
+<td>按位与处理两个长度相同的二进制数，两个相应的二进位都为1，该位的结果值才为1，否则为0。</td>
+<td>5 &amp; 1</td>
+<td>0101 &amp; 0001</td>
+<td>0001</td>
+<td>1</td>
+</tr>
+<tr>
+<td>|</td>
+<td>按位或处理两个长度相同的二进制数，两个相应的二进位中只要有一个为1，该位的结果值为1。</td>
+<td>5 | 1</td>
+<td>0101 &amp; 0001</td>
+<td>0101</td>
+<td>5</td>
+</tr>
+<tr>
+<td>~</td>
+<td>取反是一元运算符，对一个二进制数的每一位执行逻辑反操作。包括符号取反。</td>
+<td>~5</td>
+<td>~0101</td>
+<td>1010</td>
+<td>-6</td>
+</tr>
+<tr>
+<td>^</td>
+<td>按位异或运算，对等长二进制模式按位或二进制数的每一位执行逻辑异按位或操作。操作的结果是如果某位不同则该位为 1，否则该位为 0。</td>
+<td>5 ^ 1</td>
+<td>0101 ^ 0001</td>
+<td>0100</td>
+<td>4</td>
+</tr>
+<tr>
+<td>&lt;</td>
+<td>把 &lt;&lt; 左边的运算数的各二进位全部左移若干位，由 &lt;&lt; 右边的数指定移动的位数，高位丢弃，低位补 0。</td>
+<td>5 &lt;&lt; 1</td>
+<td>0101 &lt;&lt; 1</td>
+<td>1010</td>
+<td>10</td>
+</tr>
+<tr>
+<td>&gt;&gt;</td>
+<td>把 &gt;&gt; 左边的运算数的各二进位全部右移若干位，&gt;&gt; 右边的数指定移动的位数，低位丢弃，高位补 0。</td>
+<td>5 &gt;&gt; 1</td>
+<td>0101 &gt;&gt; 1</td>
+<td>0010</td>
+<td>2</td>
+</tr>
+<tr>
+<td>&gt;&gt;&gt;</td>
+<td>无符号右移，与有符号右移位类似，除了左边一律使用0 补位。</td>
+<td>5 &gt;&gt;&gt; 1</td>
+<td>0101 &gt;&gt;&gt; 1</td>
+<td>0010</td>
+<td>2</td>
+</tr>
+</tbody></table>
+<h3 id="15-赋值运算符">1.5 赋值运算符 </h3>
+<p>给定 x=10 和 y=5，下面的表格解释了赋值运算符：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">运算符</th>
+<th style="text-align:center">描述</th>
+<th style="text-align:center">例子</th>
+<th style="text-align:center">x返回值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">=</td>
+<td style="text-align:center">赋值</td>
+<td style="text-align:center">x = y</td>
+<td style="text-align:center">5</td>
+</tr>
+<tr>
+<td style="text-align:center">+=</td>
+<td style="text-align:center">先加后赋值</td>
+<td style="text-align:center">x += y</td>
+<td style="text-align:center">15</td>
+</tr>
+<tr>
+<td style="text-align:center">-=</td>
+<td style="text-align:center">先减后赋值</td>
+<td style="text-align:center">x -= y</td>
+<td style="text-align:center">5</td>
+</tr>
+<tr>
+<td style="text-align:center">*=</td>
+<td style="text-align:center">先乘后赋值</td>
+<td style="text-align:center">x *= y</td>
+<td style="text-align:center">50</td>
+</tr>
+<tr>
+<td style="text-align:center">/=</td>
+<td style="text-align:center">先除后赋值</td>
+<td style="text-align:center">x /= y</td>
+<td style="text-align:center">2</td>
+</tr>
+<tr>
+<td style="text-align:center">%=</td>
+<td style="text-align:center">先取余后赋值</td>
+<td style="text-align:center">x %= y</td>
+<td style="text-align:center">0</td>
+</tr>
+</tbody>
+</table>
+<h3 id="16-三元运算符">1.6 三元运算符 </h3>
+<p>三元运算有 3 个操作数，并且需要判断布尔表达式的值。该运算符的主要是决定哪个值应该赋值给变量。<br>
+<code>Test ? expr1 : expr2</code></p>
+<ul>
+<li>Test − 条件语句</li>
+<li>expr1 − 如果条件语句 Test 返回 true 则返回该值</li>
+<li>expr2 − 如果条件语句 Test 返回 false 则返回该值<br>
+实例：</li>
+</ul>
+<pre data-role="codeBlock" data-info="typescript" class="language-typescript typescript"><code><span class="token keyword keyword-var">var</span> num<span class="token operator">:</span><span class="token builtin">number</span> <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">2</span> 
+<span class="token keyword keyword-var">var</span> result <span class="token operator">=</span> num <span class="token operator">&gt;</span> <span class="token number">0</span> <span class="token operator">?</span> <span class="token string">"大于 0"</span> <span class="token operator">:</span> <span class="token string">"小于 0，或等于 0"</span> 
+<span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span>
+</code></pre><h3 id="17-类型运算符">1.7 类型运算符 </h3>
+<p>typeof 是一元运算符，返回操作数的数据类型。<br>
+实例：</p>
+<pre data-role="codeBlock" data-info="typescript" class="language-typescript typescript"><code><span class="token keyword keyword-var">var</span> num <span class="token operator">=</span> <span class="token number">12</span> 
+<span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword keyword-typeof">typeof</span> num<span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">//输出结果: number</span>
+</code></pre><h3 id="18-其他运算符">1.8 其他运算符 </h3>
+<p>负号运算符(-)</p>
+<pre data-role="codeBlock" data-info="typescript" class="language-typescript typescript"><code><span class="token keyword keyword-var">var</span> x<span class="token operator">:</span><span class="token builtin">number</span> <span class="token operator">=</span> <span class="token number">4</span> 
+<span class="token keyword keyword-var">var</span> y <span class="token operator">=</span> <span class="token operator">-</span>x<span class="token punctuation">;</span> 
+<span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"x 值为: "</span><span class="token punctuation">,</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// 输出结果 4 </span>
+<span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"y 值为: "</span><span class="token punctuation">,</span>y<span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// 输出结果 -4</span>
+</code></pre><p>字符串运算符: 连接运算符 (+)<br>
++运算符可以拼接两个字符串</p>
+<pre data-role="codeBlock" data-info="typescript" class="language-typescript typescript"><code><span class="token keyword keyword-var">var</span> msg<span class="token operator">:</span><span class="token builtin">string</span> <span class="token operator">=</span> <span class="token string">"RUNOOB"</span><span class="token operator">+</span><span class="token string">".COM"</span> <span class="token punctuation">;</span>
+<span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>msg<span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// 输出结果 RUNOOB.COM</span>
+</code></pre><h2 id="2-条件语句">2. 条件语句 </h2>
+<h3 id="21-ifelse-ifelse">2.1 if...else if...else... </h3>
+<ul>
+<li>一个 if 判断语句可以有 0 或 1 个 else 语句，她必需在 else..if 语句后面。</li>
+<li>一个 if 判断语句可以有 0 或多个 else..if，这些语句必需在 else 之前。</li>
+<li>一旦执行了 else..if 内的代码，后面的 else..if 或 else 将不再执行。<br>
+语法</li>
+</ul>
+<pre data-role="codeBlock" data-info="typescript" class="language-typescript typescript"><code><span class="token keyword keyword-if">if</span><span class="token punctuation">(</span>boolean_expression <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    # 在布尔表达式 boolean_expression <span class="token number">1</span> 为 <span class="token boolean">true</span> 执行
+<span class="token punctuation">}</span> <span class="token keyword keyword-else">else</span> <span class="token keyword keyword-if">if</span><span class="token punctuation">(</span> boolean_expression <span class="token number">2</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    # 在布尔表达式 boolean_expression <span class="token number">2</span> 为 <span class="token boolean">true</span> 执行
+<span class="token punctuation">}</span> <span class="token keyword keyword-else">else</span> <span class="token keyword keyword-if">if</span><span class="token punctuation">(</span> boolean_expression <span class="token number">3</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    # 在布尔表达式 boolean_expression <span class="token number">3</span> 为 <span class="token boolean">true</span> 执行
+<span class="token punctuation">}</span> <span class="token keyword keyword-else">else</span> <span class="token punctuation">{</span>
+    # 布尔表达式的条件都为 <span class="token boolean">false</span> 时执行
+<span class="token punctuation">}</span>
+</code></pre><p>实例</p>
+<pre data-role="codeBlock" data-info="typescript" class="language-typescript typescript"><code><span class="token keyword keyword-var">var</span> num<span class="token operator">:</span><span class="token builtin">number</span> <span class="token operator">=</span> <span class="token number">2</span> 
+<span class="token keyword keyword-if">if</span><span class="token punctuation">(</span>num <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+    <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>num<span class="token operator">+</span><span class="token string">" 是正数"</span><span class="token punctuation">)</span> 
+<span class="token punctuation">}</span> <span class="token keyword keyword-else">else</span> <span class="token keyword keyword-if">if</span><span class="token punctuation">(</span>num <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+    <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>num<span class="token operator">+</span><span class="token string">" 是负数"</span><span class="token punctuation">)</span> 
+<span class="token punctuation">}</span> <span class="token keyword keyword-else">else</span> <span class="token punctuation">{</span> 
+    <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>num<span class="token operator">+</span><span class="token string">" 不是正数也不是负数"</span><span class="token punctuation">)</span> 
+<span class="token punctuation">}</span>   <span class="token comment">//输出结果为：2 是正数</span>
+</code></pre><h3 id="22-switchcase">2.2 switch...case... </h3>
+<p>一个 switch 语句允许测试一个变量等于多个值时的情况。每个值称为一个 case，且被测试的变量会对每个 switch case 进行检查。</p>
+<p>语法</p>
+<pre data-role="codeBlock" data-info="typescript" class="language-typescript typescript"><code><span class="token keyword keyword-switch">switch</span><span class="token punctuation">(</span>expression<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword keyword-case">case</span> constant<span class="token operator">-</span>expression  <span class="token operator">:</span>
+       <span class="token function">statement</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span>
+       <span class="token keyword keyword-break">break</span><span class="token punctuation">;</span> <span class="token comment">/* 可选的 */</span>
+    <span class="token keyword keyword-case">case</span> constant<span class="token operator">-</span>expression  <span class="token operator">:</span>
+       <span class="token function">statement</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span>
+       <span class="token keyword keyword-break">break</span><span class="token punctuation">;</span> <span class="token comment">/* 可选的 */</span>
+  
+    <span class="token comment">/* 您可以有任意数量的 case 语句 */</span>
+    <span class="token keyword keyword-default">default</span> <span class="token operator">:</span> <span class="token comment">/* 可选的 */</span>
+       <span class="token function">statement</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><ul>
+<li>switch 语句中的 expression 是一个要被比较的表达式，可以是任何类型，包括基本数据类型（如 number、string、boolean）、对象类型（如 object、Array、Map）以及自定义类型（如 class、interface、enum）等。</li>
+<li>在一个 switch 中可以有任意数量的 case 语句。每个 case 后跟一个要比较的值和一个冒号。</li>
+<li>case 的 constant-expression 必须与 switch 中的变量 expression 具有相同或兼容的数据类型。</li>
+<li>当被测试的变量等于 case 中的常量时，case 后跟的语句将被执行，直到遇到 break 语句为止。</li>
+<li>当遇到 break 语句时，switch 终止，控制流将跳转到 switch 语句后的下一行。</li>
+<li>不是每一个 case 都需要包含 break。如果 case 语句不包含 break，控制流将会继续后续的 case，直到遇到 break 为止。</li>
+<li>一个 switch 语句可以有一个可选的 default case，出现在 switch 的结尾。default 关键字则表示当表达式的值与所有 case 值都不匹配时执行的代码块。default case 中的 break 语句不是必需的。</li>
+</ul>
+<p>实例</p>
+<pre data-role="codeBlock" data-info="typescript" class="language-typescript typescript"><code><span class="token keyword keyword-var">var</span> grade<span class="token operator">:</span><span class="token builtin">string</span> <span class="token operator">=</span> <span class="token string">"A"</span><span class="token punctuation">;</span> 
+<span class="token keyword keyword-switch">switch</span><span class="token punctuation">(</span>grade<span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+    <span class="token keyword keyword-case">case</span> <span class="token string">"A"</span><span class="token operator">:</span> <span class="token punctuation">{</span> 
+        <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"优"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+        <span class="token keyword keyword-break">break</span><span class="token punctuation">;</span> 
+    <span class="token punctuation">}</span> 
+    <span class="token keyword keyword-case">case</span> <span class="token string">"B"</span><span class="token operator">:</span> <span class="token punctuation">{</span> 
+        <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"良"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+        <span class="token keyword keyword-break">break</span><span class="token punctuation">;</span> 
+    <span class="token punctuation">}</span> 
+    <span class="token keyword keyword-case">case</span> <span class="token string">"C"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"及格"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+        <span class="token keyword keyword-break">break</span><span class="token punctuation">;</span>    
+    <span class="token punctuation">}</span> 
+    <span class="token keyword keyword-case">case</span> <span class="token string">"D"</span><span class="token operator">:</span> <span class="token punctuation">{</span> 
+        <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"不及格"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+        <span class="token keyword keyword-break">break</span><span class="token punctuation">;</span> 
+    <span class="token punctuation">}</span>  
+    <span class="token keyword keyword-default">default</span><span class="token operator">:</span> <span class="token punctuation">{</span> 
+        <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"非法输入"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+        <span class="token keyword keyword-break">break</span><span class="token punctuation">;</span>              
+    <span class="token punctuation">}</span> 
+<span class="token punctuation">}</span>     <span class="token comment">//输出结果：优</span>
+</code></pre><h2 id="3-循环语句">3. 循环语句 </h2>
+<h3 id="31-for循环">3.1 for循环 </h3>
+<p>语法</p>
+<pre data-role="codeBlock" data-info="typescript" class="language-typescript typescript"><code><span class="token keyword keyword-for">for</span> <span class="token punctuation">(</span> init<span class="token punctuation">;</span> condition<span class="token punctuation">;</span> increment <span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token function">statement</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><ul>
+<li>init 会首先被执行，且只会执行一次。这一步允许您声明并初始化任何循环控制变量。您也可以不在这里写任何语句，只要有一个分号出现即可。</li>
+<li>接下来，会判断 condition。如果为 true，则执行循环主体。如果为 false，则不执行循环主体，且控制流会跳转到紧接着 for 循环的下一条语句。</li>
+<li>在执行完 for 循环主体后，控制流会跳回上面的 increment 语句。该语句允许您更新循环控制变量。该语句可以留空，只要在条件后有一个分号出现即可。</li>
+<li>条件再次被判断。如果为 true，则执行循环，这个过程会不断重复（循环主体，然后增加步值，再然后重新判断条件）。在条件变为 false 时，for 循环终止。</li>
+</ul>
+<p>实例：以下实例计算 5 的阶乘， for 循环生成从 5 到 1 的数字，并计算每次循环数字的乘积。</p>
+<pre data-role="codeBlock" data-info="typescript" class="language-typescript typescript"><code><span class="token keyword keyword-var">var</span> num<span class="token operator">:</span><span class="token builtin">number</span> <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">;</span> 
+<span class="token keyword keyword-var">var</span> i<span class="token operator">:</span><span class="token builtin">number</span><span class="token punctuation">;</span> 
+<span class="token keyword keyword-var">var</span> factorial <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> 
+ 
+<span class="token keyword keyword-for">for</span><span class="token punctuation">(</span>i <span class="token operator">=</span> num<span class="token punctuation">;</span>i<span class="token operator">&gt;=</span><span class="token number">1</span><span class="token punctuation">;</span>i<span class="token operator">--</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   factorial <span class="token operator">*=</span> i<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>factorial<span class="token punctuation">)</span>
+</code></pre><h3 id="32-forin循环">3.2 for...in循环 </h3>
+<p>for...in 语句用于一组值的集合或列表进行迭代输出。<br>
+语法</p>
+<pre data-role="codeBlock" data-info="typescript" class="language-typescript typescript"><code><span class="token keyword keyword-for">for</span> <span class="token punctuation">(</span><span class="token keyword keyword-var">var</span> val <span class="token keyword keyword-in">in</span> list<span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+    <span class="token comment">//语句 </span>
+<span class="token punctuation">}</span>
+</code></pre><p>val 需要为 string 或 any 类型。<br>
+实例</p>
+<pre data-role="codeBlock" data-info="typescript" class="language-typescript typescript"><code><span class="token keyword keyword-var">var</span> j<span class="token operator">:</span><span class="token builtin">any</span><span class="token punctuation">;</span> 
+<span class="token keyword keyword-var">var</span> n<span class="token operator">:</span><span class="token builtin">any</span> <span class="token operator">=</span> <span class="token string">"a b c"</span> <span class="token punctuation">;</span>
+ 
+<span class="token keyword keyword-for">for</span><span class="token punctuation">(</span>j <span class="token keyword keyword-in">in</span> n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>n<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+<span class="token punctuation">}</span>
+</code></pre><h3 id="33-forof循环">3.3 for...of循环 </h3>
+<p>for...of 语句创建一个循环来迭代可迭代的对象。在 ES6 中引入的 for...of 循环，以替代 for...in 和 forEach() ，并支持新的迭代协议。for...of 允许你遍历 Arrays（数组）, Strings（字符串）, Maps（映射）, Sets（集合）等可迭代的数据结构等。<br>
+实例</p>
+<pre data-role="codeBlock" data-info="typescript" class="language-typescript typescript"><code><span class="token keyword keyword-let">let</span> someArray <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"string"</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+ 
+<span class="token keyword keyword-for">for</span> <span class="token punctuation">(</span><span class="token keyword keyword-let">let</span> entry <span class="token keyword keyword-of">of</span> someArray<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>entry<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 1, "string", false</span>
+<span class="token punctuation">}</span>
+</code></pre><h3 id="34-foreach-every-some-map循环">3.4 forEach、every、some、map循环 </h3>
+<p>forEach、every 和 some 是 JavaScript 的循环语法，TypeScript 作为 JavaScript 的语法超集，当然默认也是支持的。<br>
+因为 forEach 在 iteration 中是无法返回的，所以可以使用 every 和 some 来取代 forEach。<br>
+实例</p>
+<pre data-role="codeBlock" data-info="typescript" class="language-typescript typescript"><code><span class="token comment">//forEach循环，不会被return跳出循环体</span>
+<span class="token keyword keyword-let">let</span> list <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+list<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span>val<span class="token punctuation">,</span> idx<span class="token punctuation">,</span> array<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token comment">// val: 当前值</span>
+    <span class="token comment">// idx：当前index</span>
+    <span class="token comment">// array: Array</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><pre data-role="codeBlock" data-info="typescript" class="language-typescript typescript"><code><span class="token comment">//every循环，return false跳出循环体</span>
+<span class="token keyword keyword-let">let</span> list<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+list<span class="token punctuation">.</span><span class="token function">every</span><span class="token punctuation">(</span><span class="token punctuation">(</span>val<span class="token punctuation">,</span> idx<span class="token punctuation">,</span> array<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token comment">// val: 当前值</span>
+    <span class="token comment">// idx：当前index</span>
+    <span class="token comment">// array: Array</span>
+    <span class="token keyword keyword-return">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span> <span class="token comment">// Continues</span>
+    <span class="token comment">// 内部返回false跳出循环体</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><pre data-role="codeBlock" data-info="typescript" class="language-typescript typescript"><code><span class="token comment">//some循环，return true跳出循环体</span>
+<span class="token keyword keyword-let">let</span> list<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+list<span class="token punctuation">.</span><span class="token function">some</span><span class="token punctuation">(</span><span class="token punctuation">(</span>val<span class="token punctuation">,</span> idx<span class="token punctuation">,</span> array<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token comment">// val: 当前值</span>
+    <span class="token comment">// idx：当前index</span>
+    <span class="token comment">// array: Array</span>
+    <span class="token keyword keyword-return">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span> <span class="token comment">// Continues</span>
+    <span class="token comment">// 内部返回true跳出循环体</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><pre data-role="codeBlock" data-info="typescript" class="language-typescript typescript"><code><span class="token comment">//map循环，有返回值，返回一个新的数组</span>
+<span class="token keyword keyword-let">let</span> list<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-let">let</span> arr<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+arr <span class="token operator">=</span> list<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span>val<span class="token punctuation">,</span> idx<span class="token punctuation">,</span> array<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token comment">// val: 当前值</span>
+    <span class="token comment">// idx：当前index</span>
+    <span class="token comment">// array: Array</span>
+    <span class="token keyword keyword-return">return</span> val <span class="token operator">*</span> <span class="token number">2</span><span class="token punctuation">;</span> 
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">//[8,10,12]</span>
+</code></pre><h3 id="35-while循环">3.5 while循环 </h3>
+<p>while 语句在给定条件为 true 时，重复执行语句或语句组。循环主体执行之前会先测试条件。<br>
+语法</p>
+<pre data-role="codeBlock" data-info="typescript" class="language-typescript typescript"><code><span class="token keyword keyword-while">while</span><span class="token punctuation">(</span>condition<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+   <span class="token function">statement</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><ul>
+<li>statement(s) 可以是一个单独的语句，也可以是几个语句组成的代码块。</li>
+<li>condition 可以是任意的表达式，当条件为 true 时执行循环。 当条件为 false 时，程序流将退出循环。</li>
+</ul>
+<p>实例</p>
+<pre data-role="codeBlock" data-info="typescript" class="language-typescript typescript"><code><span class="token keyword keyword-var">var</span> num<span class="token operator">:</span><span class="token builtin">number</span> <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">;</span> 
+<span class="token keyword keyword-var">var</span> factorial<span class="token operator">:</span><span class="token builtin">number</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> 
+ 
+<span class="token keyword keyword-while">while</span><span class="token punctuation">(</span>num <span class="token operator">&gt;=</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+    factorial <span class="token operator">=</span> factorial <span class="token operator">*</span> num<span class="token punctuation">;</span> 
+    num<span class="token operator">--</span><span class="token punctuation">;</span> 
+<span class="token punctuation">}</span> 
+<span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"5 的阶乘为："</span><span class="token operator">+</span>factorial<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><h3 id="36-dowhile循环">3.6 do...while循环 </h3>
+<p>do...while 循环是在循环的尾部检查它的条件。<br>
+语法</p>
+<pre data-role="codeBlock" data-info="typescript" class="language-typescript typescript"><code><span class="token keyword keyword-do">do</span>
+<span class="token punctuation">{</span>
+   <span class="token function">statement</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token keyword keyword-while">while</span><span class="token punctuation">(</span> condition <span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><ul>
+<li>条件表达式出现在循环的尾部，所以循环中的 statement(s) 会在条件被测试之前至少执行一次。</li>
+<li>如果条件为 true，控制流会跳转回上面的 do，然后重新执行循环中的 statement(s)。这个过程会不断重复，直到给定条件变为 false 为止。</li>
+</ul>
+<p>实例</p>
+<pre data-role="codeBlock" data-info="typescript" class="language-typescript typescript"><code><span class="token keyword keyword-var">var</span> n<span class="token operator">:</span><span class="token builtin">number</span> <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-do">do</span> <span class="token punctuation">{</span> 
+    <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span> 
+    n<span class="token operator">--</span><span class="token punctuation">;</span> 
+<span class="token punctuation">}</span> <span class="token keyword keyword-while">while</span><span class="token punctuation">(</span>n<span class="token operator">&gt;=</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><h3 id="37-break">3.7 break </h3>
+<ul>
+<li>当 break 语句出现在一个循环内时，循环会立即终止，且程序流将继续执行紧接着循环的下一条语句。</li>
+<li>它可用于终止 switch 语句中的一个 case。<br>
+实例</li>
+</ul>
+<pre data-role="codeBlock" data-info="typescript" class="language-typescript typescript"><code><span class="token keyword keyword-var">var</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-while">while</span> <span class="token punctuation">(</span>i <span class="token operator">&lt;=</span> <span class="token number">10</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword keyword-if">if</span> <span class="token punctuation">(</span>i <span class="token operator">%</span> <span class="token number">5</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"在 1~10 之间第一个被 5 整除的数为 : "</span> <span class="token operator">+</span> i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword keyword-break">break</span><span class="token punctuation">;</span> <span class="token comment">// 找到一个后退出循环</span>
+    <span class="token punctuation">}</span>
+    i<span class="token operator">++</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span> <span class="token comment">// 输出 5 然后程序执行结束</span>
+</code></pre><h3 id="38-continue">3.8 continue </h3>
+<p>continue 语句有点像 break 语句。但它不是强制终止，continue 会跳过当前循环中的代码，强迫开始下一次循环。</p>
+<p>对于 for 循环，continue 语句执行后自增语句仍然会执行。对于 while 和 do...while 循环，continue 语句会重新执行条件判断语句。</p>
+<pre data-role="codeBlock" data-info="typescript" class="language-typescript typescript"><code><span class="token keyword keyword-var">var</span> num<span class="token operator">:</span><span class="token builtin">number</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-var">var</span> count<span class="token operator">:</span><span class="token builtin">number</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+ 
+<span class="token keyword keyword-for">for</span><span class="token punctuation">(</span>num<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>num<span class="token operator">&lt;=</span><span class="token number">20</span><span class="token punctuation">;</span>num<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword keyword-if">if</span> <span class="token punctuation">(</span>num <span class="token operator">%</span> <span class="token number">2</span><span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword keyword-continue">continue</span>
+    <span class="token punctuation">}</span>
+    count<span class="token operator">++</span>
+<span class="token punctuation">}</span>
+<span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span> <span class="token punctuation">(</span><span class="token string">"0 ~20 之间的偶数个数为: "</span><span class="token operator">+</span>count<span class="token punctuation">)</span>    <span class="token comment">//输出10个</span>
+</code></pre><h3 id="39-无限循环">3.9 无限循环 </h3>
+<p>无限循环就是一直在运行不会停止的循环。 for 和 while 循环都可以创建无限循环。</p>
+<pre data-role="codeBlock" data-info="typescript" class="language-typescript typescript"><code><span class="token keyword keyword-for">for</span><span class="token punctuation">(</span><span class="token punctuation">;</span><span class="token punctuation">;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+   <span class="token comment">// 语句</span>
+<span class="token punctuation">}</span>
+</code></pre><pre data-role="codeBlock" data-info="typescript" class="language-typescript typescript"><code><span class="token keyword keyword-while">while</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+   <span class="token comment">// 语句</span>
+<span class="token punctuation">}</span> 
+</code></pre>
       </div>
       
       
